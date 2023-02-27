@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    min-width: 720px;
+  }
+  form {
+    margin-top: 50px;
+  }
+  form div {
+    margin-top: 10px;
+  }
+  form input {
+    width: 195px;
+    height: 25px;
+    font-size: 18px;
+    text-align: center;
+  }
+  canvas {
+    background: rgb(196, 196, 196);
+    display: block;
+    margin: 5px auto;
+    float: left;
+  }
+  #divPlayers {
+    width: 150px;
+    height: auto;
+    min-height: 320px;
+    float: left;
+    border: 1px solid white;
+    margin: 10px;
+  }
+  
+  button {
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: lightslategray;
+    color: white;
+    border-radius: 6px;
+  }
+  h4 {
+    color: gray;
+  }
+  #btnSearchMatch {
+    margin: 10px 0;
+  }
