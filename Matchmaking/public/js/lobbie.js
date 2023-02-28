@@ -30,6 +30,7 @@ socket.on("userConnected",(data)=>{
     console.log(data.username+" se ha conectado");
     addOnlineUser(data.username);
     lblOnlineUsersCount.innerHTML = Number(lblOnlineUsersCount.innerHTML)+1;
+    
 
 })
 
@@ -91,12 +92,14 @@ function matchSearchStart() {
     }
   }
 
-  function setOnlineUsers(onlineUsers) {
+  function setOnlineUsers(connectedUsers) {
     divUsers.innerHTML = "";
     
-    onlineUsers.forEach((user) => {
-      divUsers.innerHTML +=
-        `<div id="${user.username}"> ${user.username} </div>`;
+    Object.keys(connectedUsers).forEach((username) => {
+      const userElement = document.createElement('div');
+      userElement.id = username;
+      userElement.innerHTML = username + (connectedUsers[username] ? " (Disponible)" : " (Ocupado)");
+      divUsers.append(userElement);    
     });
   }
 
@@ -107,5 +110,6 @@ function matchSearchStart() {
     divUsers.append(userElement);    
   }
   function removeOnlineUser(username) {
+    console.log("Removiendo usuario");
     document.getElementById(username)?.remove();
   }
